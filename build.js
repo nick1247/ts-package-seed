@@ -37,7 +37,10 @@ const createPackageJson = (dest) => {
     let pkgJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
     let targetPkgJson = {};
     let fieldsToCopy = ['name', 'version', 'description', 'author', 'repository', 'license'];
-    fieldsToCopy.forEach((field) => { targetPkgJson[field] = pkgJson[field]; });
+    fieldsToCopy.forEach((field) => {
+        if (field === 'name') targetPkgJson[field] = '@ep/' + pkgJson[field];
+        else targetPkgJson[field] = pkgJson[field];
+    });
 
     targetPkgJson['main'] = `bundle/${utils.getPackageName()}.umd.js`;
     targetPkgJson['module'] = `bundle/${utils.getPackageName()}.es5.js`;
