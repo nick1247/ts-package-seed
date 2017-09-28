@@ -1,0 +1,37 @@
+{
+    "name": "ts-package-seed",
+    "version": "0.1.0",
+    "description": "ts-package-seed",
+    "author": "maa12",
+    "license": "ISC",
+    "scripts": {
+        "deploy": "node publish",
+        "tslint": "tslint ./src/**/*.ts -c tslint.json",
+        "rollup": "rollup -c rollup.config.js",
+        "start": "webpack-dev-server --config webpack.config.js --progress"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.europlan.ru:maa12/ts-package-seed.git"
+    },
+    "publishConfig": {
+        "registry": "http://nuget.europlan.ru/npm/npm"
+    },
+    "peerDependencies": {
+        "moment": "^2.18.1"
+    },
+    "devDependencies": {
+        "@types/es6-shim": "0.31.35",
+        "@types/node": "8.0.31",
+        "colors": "1.1.2",
+        "copyfiles": "1.2.0",
+        "moment": "2.18.1",
+        "rollup": "0.50.0",
+        "rollup-plugin-node-resolve": "3.0.0",
+        "ts-loader": "2.3.7",
+        "tslint": "5.7.0",
+        "typescript": "2.5.3",
+        "webpack": "3.6.0",
+        "webpack-dev-server": "2.9.1"
+    }
+}
