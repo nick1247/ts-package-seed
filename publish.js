@@ -6,7 +6,7 @@ const utils = require('./utils');
 const log = utils.log;
 
 const publish = () => {
-    let curVersion = execSync(`npm show ${utils.getPackageName()} version`).toString().trim();
+    let curVersion = execSync(`npm show @ep/${utils.getPackageName()} version`).toString().trim();
     if (curVersion == utils.getPackageVersion()) {
         log.error(`Version ${curVersion} already published`);
         return;
@@ -17,7 +17,7 @@ const publish = () => {
     execWithParentIO(`cd dist && npm publish`);
 
     console.log();
-    log.success(`Successfully published ${utils.getPackageName()} v${utils.getPackageVersion()}`);
+    log.success(`Successfully published @ep/${utils.getPackageName()} v${utils.getPackageVersion()}`);
 }
 
 publish();
