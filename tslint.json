@@ -23,10 +23,11 @@
         "no-var-keyword": true,
         "no-null-keyword": true,
         "no-unused-expression": [true, "allow-fast-null-checks"],
+        "no-unused-variable": true,
         "no-trailing-whitespace": true,
         "one-line": [true, "check-open-brace", "check-whitespace"],
         "quotemark": [true, "single"],
-        "semicolon": false,
+        "semicolon": [true, "always", "ignore-bound-class-methods"],
         "triple-equals": [true, "allow-null-check"],
         "typedef-whitespace": [true, {
             "call-signature": "nospace",
